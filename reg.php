@@ -62,10 +62,11 @@ $.ajax({
   data:{'username':name,'email':email,'login':login,'pass':pass},
   dataType:'html',
   success:function(data){
-    if(data=='Готово'){
+    if(data==='Готово'){
           $('#reg_user').hide();
           $('#errorBlock').hide();
           $('#goodBlock').show();
+              $('#goodBlock').text('Пользователь добавен');
     }
 
     else{
@@ -79,6 +80,7 @@ $.ajax({
 
 });
 
+    
 
 </script>
 

@@ -2,9 +2,22 @@
   <h5 class="my-0 mr-md-auto font-weight-normal">PHP blog</h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="/">Главная страница</a>
-
+        <?php
+        if($_COOKIE['login']!='')
+            echo '<a class="p-2 btn btn-outline-info mb-2" href="/article.php">Добавить статью</a>';
+          ?>
 
   </nav>
-  <a class="btn btn-outline-primary mr-2 mb-2" href="#">Зайти</a>
+    <?php
+        if($_COOKIE['login']==''):
+          ?>
+  <a class="btn btn-outline-primary mr-2 mb-2" href="/auth.php">Логин</a>
   <a class="btn btn-outline-primary mb-2" href="/reg.php">Регистрация</a>
+    <?php
+      else:
+  ?>
+            <a class="btn btn-outline-primary mb-2" href="/auth.php">Кабинет пользователя</a>
+              <?php
+    endif;
+          ?>
 </div>
